@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-  ifstream input("inputs/day-1-a.txt");
+  ifstream input("inputs/01.txt");
 
   if (!input.is_open()) {
     cout << "Unable to open file." << endl;

@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-#include <set>
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -24,13 +24,16 @@ int main() {
     right_list.push_back(right_list_item);
   }
 
-  set<int> unique_left_elements(left_list.begin(), left_list.end());
+  map<int, int> count_of_right_values;
+
+  for (auto item : right_list) {
+    count_of_right_values[item] += 1;
+  }
 
   int similarity_score = 0;
 
-  for (auto item : unique_left_elements) {
-    similarity_score += item * count(left_list.begin(), left_list.end(), item) *
-                        count(right_list.begin(), right_list.end(), item);
+  for (auto item : left_list) {
+    similarity_score += count_of_right_values[item] * item;
   }
 
   cout << "Similarity score: " << similarity_score << endl;

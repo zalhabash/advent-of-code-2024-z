@@ -17,17 +17,13 @@ int main() {
   int right_list_item = 0;
 
   vector<int> left_list;
-  vector<int> right_list;
-
-  while (input >> left_list_item >> right_list_item) {
-    left_list.push_back(left_list_item);
-    right_list.push_back(right_list_item);
-  }
 
   map<int, int> count_of_right_values;
 
-  for (auto item : right_list) {
-    count_of_right_values[item] += 1;
+  while (input >> left_list_item >> right_list_item) {
+    left_list.push_back(left_list_item);
+
+    count_of_right_values[right_list_item] += 1;
   }
 
   int similarity_score = 0;

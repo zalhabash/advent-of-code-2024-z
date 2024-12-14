@@ -36,6 +36,10 @@ int main() {
     distance += abs(left_list[i] - right_list[i]);
   }
 
-  cout << "distance: " << distance << endl;
+  cout << "Distance: " << distance << endl;
+
+  if (distance != 1258579) {
+    cout << "Wrong answer!" << endl;
+  }
   return 0;
 }
